@@ -1,5 +1,7 @@
 .main {
   background: linear-gradient(#fff, #504f4f);
+  background: url(./rainy-day.jpg);
+  width: 100%;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   min-height: 100vh;
   justify-content: center;
@@ -40,4 +42,24 @@ a:hover {
   align-content: center;
   font-size: calc(10px + 1vmin);
   color: white;
+}
+
+.h2-font {
+  font-size: 50px;
+}
+
+.p-font {
+  font-size: 25px;
+  color:#495772;
+}
+
+.temp-button {
+  border: hidden;
+  background-color: inherit;
+  color: white;
+}
+
+.temp-button:active {
+  background-color: inherit;
+  color: #4A5B75;
 }

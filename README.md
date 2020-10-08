@@ -14,5 +14,5 @@ Part 1:
 Part 2
 
 * Commit your code regularly to git as you build your app (Create a new repo for this assignment 
-* Research GIT BRANCHES  and see how you can incorporate that in your git practice
+* Research GIT BRANCHES and see how you can incorporate that in your git practice
 * Submit your assignment using this google form: https://forms.gle/xwBqdfsDUBwyYocC6
