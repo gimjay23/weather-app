@@ -1,5 +1,7 @@
 ## Assignment
 
+## Update: Weather page has a useState feature that allows for conversion of celsius to fahrenheit when the C or the F is clicked. TRY IT!!!
+
 PreMEST Day 2 Assignment
 
 Part 1:
