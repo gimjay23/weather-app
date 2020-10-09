@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../App.css";
 
 function RandomComponent() {
@@ -33,13 +33,13 @@ function RandomComponent() {
           <div style={widget}>
             <h6 style={{ fontSize: "150px" }}>
               {temp}{" "}
-              <Link className="temp-button" onClick={CelsuisToFahrenheit}>
-                °C{" "}
-              </Link>
-              |{" "}
-              <Link className="temp-button" onClick={fahrenheitToCelsius}>
+              <NavLink to="/signin" className="temp-button" onClick={CelsuisToFahrenheit}>
+                °C
+              </NavLink>
+              /
+              <NavLink to="signin" className="temp-button" onClick={fahrenheitToCelsius}>
                 F
-              </Link>
+              </NavLink>
             </h6>
           </div>
         </Col>

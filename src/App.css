@@ -1,6 +1,6 @@
 .main {
   background: linear-gradient(#fff, #504f4f);
-  background: url(./rainy-day.jpg);
+  background: url(./sunny.png);
   width: 100%;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   min-height: 100vh;
@@ -11,6 +11,18 @@
 
 .nav-bar {
   background-color: inherit;
+}
+Nav {
+  max-height: 10vh;
+}
+
+.nav-link {
+  margin: 30px;
+}
+
+.nav-link a:active {
+  text-decoration: underline;
+  color: black;
 }
 
 a {
@@ -34,7 +46,7 @@ a:hover {
 }
 
 .about-page {
-  background: url(./sunny.png);
+  background: url(./rainy-day.jpg);
   width: 100%;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   min-height: 100vh;
