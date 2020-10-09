@@ -6,7 +6,7 @@ import "../App.css";
 function RandomComponent() {
   const widget = {
     backgroundColor: "inherit",
-    border: "3px solid #EBE6E2",
+    border: "2px solid #EBE6E2",
     borderRadius: "15px",
     boxShadow: "4px 2px #636F87",
     marginTop: "5px",
