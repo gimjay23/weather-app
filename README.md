@@ -1,6 +1,12 @@
 ## Assignment III
 
-## Update: Weather page has a useState feature that allows for conversion of celsius to fahrenheit when the C or the F is clicked. TRY IT!!!
+# Update 1: several changes made; yet to add routing and conversion
+
+## To Do 
+- Weather page to have a useState feature that allows for conversion of celsius to fahrenheit when the C or the F is clicked. 
+- Search Functionality to be added
+- Page Routing with Home, About, and Login Pages
+
 
 PreMEST Day 3 Assignment
 
