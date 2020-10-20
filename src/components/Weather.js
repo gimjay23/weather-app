@@ -30,11 +30,11 @@ function Weather(props) {
       <h3>Welcome to THE WEATHER APP</h3>
       <hr style={{ width: "40%" }} />
       <div>
-        <Form style={centerStyle}>
-          <FormControl type="text" placeholder="Search" />
+        <Form style={centerStyle} onSubmit= {(e) => props.changeWeather(e)}>
+          <FormControl type="text" placeholder="Enter Your Location" onChange={(e) => props.changeRegion(e.target.value)}/>
           <br />
-          <Button className="" variant="outline-light">
-            Search
+          <Button className="" variant="outline-light" onClick= {(e) => props.changeWeather(e)}>
+            SUBMIT
           </Button>
         </Form>
       </div>
@@ -44,14 +44,14 @@ function Weather(props) {
 
   const widget = {
     backgroundColor: "inherit",
-    border: "2px solid #EBE6E2",
     borderRadius: "15px",
-    boxShadow: "4px 2px #636F87",
+    boxShadow: "4px 2px #fff",
     marginTop: "5px",
     marginBottom: "5px",
     height: "200px",
     textAlign: "center",
     padding: "5px",
+    color: "#fff"
   };
 
   const myText = (
@@ -59,33 +59,48 @@ function Weather(props) {
       <Row>
         <Col md={4}>
           <div style={widget}>
-            <h1 style={{ fontSize: "60px" }}><sup><img src={img} alt="weather icon" style={{width:"10%", marginRight:"20px"}}/></sup>
+            <h1 style={{ fontSize: "60px" }}>
+              <sup>
+                <img src={img} alt="weather icon" style={{ width: "10%", marginRight: "20px" }} />
+              </sup>
               {temperature}
               <sup>°</sup>C
             </h1>
             <h4>{description}</h4>
             <hr style={{ width: "40%", backgroundColor: "white" }} />
-            <h6 style={{color:"#AA9AA5"}}>{time}</h6>
+            <h6>
+              <span>Updated at:</span> {time}
+            </h6>
           </div>
         </Col>
         <Col md={4}>
           <div style={widget}>
-            <h2>{location}</h2>
+            <h2>
+              <span>Location:</span> {location}
+            </h2>
             <br />
             <h4>
-              {region} | {country}
+              <span>Region:</span> {region} | <span>Country:</span> {country}
             </h4>
             <br />
-            <p style={{color:"#AA9AA5"}}>{timezone}</p>
+            <p>
+              <span>Time Zone:</span> {timezone}
+            </p>
           </div>
         </Col>
-        <Col md={4} style={{color:"#AA9AA5"}}>
+        <Col md={4}>
           <div style={widget}>
-            <h2>{pressure}</h2>
+            <h4>
+              <span>Pressure(mbar)</span>: {pressure}
+            </h4>
             <br />
-            <h4>{humidity}</h4> 
+            <h4>
+              <span>Humidity(%):</span> {humidity}
+            </h4>
             <br />
-            <h5>{wind_speed}</h5>
+            <h5>
+              <span>Wind Speed(km/hr):</span> {wind_speed}
+            </h5>
           </div>
         </Col>
       </Row>

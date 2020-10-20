@@ -11,6 +11,7 @@ class App extends Component {
       longitude: 60,
     },
     data: {},
+    inputData: "",
   };
 
   componentDidMount() {
@@ -51,10 +52,46 @@ class App extends Component {
     }
   }
 
+  //track search bar input changes
+  change = (value) => {
+    this.setState({ inputData: value });
+  };
+
+  //Change weather on submit button or enter click
+  changeWeather = (event) => {
+    event.preventDefault();
+    //Api call
+    Axios.get(
+      `http://api.weatherstack.com/current?access_key=02470589636a3e3b09868f65eea8979f&query=${this.state.inputData}`
+    ).then((res) => {
+      console.log(res);
+      console.log(res);
+      let weatherData = {
+        location: res.data.location.name,
+        region: res.data.location.region,
+        country: res.data.location.country,
+        time: res.data.location.localtime,
+        timezone: res.data.location.timezone_id,
+        img: res.data.current.weather_icons,
+        temperature: res.data.current.temperature,
+        pressure: res.data.current.pressure,
+        humidity: res.data.current.humidity,
+        description: res.data.current.weather_descriptions[0],
+        wind_speed: res.data.current.wind_speed,
+      };
+
+      this.setState({ data: weatherData });
+    });
+  };
+
   render() {
     return (
       <div className="weather-page">
-      <Weather weatherData = {this.state.data} />
+        <Weather
+          weatherData={this.state.data}
+          changeRegion={this.change}
+          changeWeather={this.changeWeather}
+        />
       </div>
     );
   }

@@ -62,7 +62,7 @@ a:hover {
 
 .p-font {
   font-size: 25px;
-  color:#495772;
+  color: #495772;
 }
 
 .temp-button {
@@ -73,5 +73,10 @@ a:hover {
 
 .temp-button:active {
   background-color: inherit;
-  color: #4A5B75;
+  color: #4a5b75;
+}
+
+span {
+  color: #55a4f8;
+  font-size: large;
 }
