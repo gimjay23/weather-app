@@ -1,20 +1,31 @@
-## Assignment
+## Assignment III
 
 ## Update: Weather page has a useState feature that allows for conversion of celsius to fahrenheit when the C or the F is clicked. TRY IT!!!
 
-PreMEST Day 2 Assignment
+PreMEST Day 3 Assignment
 
-Part 1:
-* Build the front of a weather app:
-* A home page
-* A login page 
-* Include a search bar in your app
+* Build an app that displays the weather
+* Login and Sign In
+* Show weather of current country on home page (this should show whether or not the user is logged in)
+* Search for weather of specific city
+* On user login, save last 5 searches and display results for last five searches on logged in user screen
 
-    - You DO NOT have to implement any functionality. Focus on building the static component and think about how you would divide the two pages and implement it
-    - Think about and use the principles we have learnt in class (Components, State, Props, Jsx)
-    - You can hard code the details of your weather ( we will cover using an Api soon and part 2 of this assignment will test that)
+- Free weather API:
+	https://restcountries.eu
+	https://weatherstack.com
+
+Extra:
+* Last seven days (less than 7 is fine) for searched city
+
 Part 2
-
 * Commit your code regularly to git as you build your app (Create a new repo for this assignment 
-* Research GIT BRANCHES and see how you can incorporate that in your git practice
-* Submit your assignment using this google form: https://forms.gle/xwBqdfsDUBwyYocC6
+* Research GIT BRANCHES  and see how you can incorporate that in your git practice
+* Submit your assignment using this google form: https://forms.gle/Q5nhhvhrvsYqLDNg7
+
+......................................................................................
+- restcountries.eu
+- REST Countries
+- Get information about countries via a RESTful API
+-- weatherstack.comweatherstack.com
+-- weatherstack - Real-Time World Weather REST API
+- Get current weather information, historical data and forecasts using weatherstack - a free world weather REST API supporting millions of global locations.
