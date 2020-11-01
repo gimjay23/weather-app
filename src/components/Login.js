@@ -73,18 +73,20 @@ function Login() {
           </Form.Group>
 
           <Button className="buttonload" variant="primary" type="submit" onClick={handleLogin}>
-            {loggedIn === true ? <span><i className="fa fa-spinner fa-spin"></i>Signed In | Redirecting ...</span> : <span>Sign Up</span>}
+            {loggedIn === true ? (
+              <span>
+                <i className="fa fa-spinner fa-spin"></i>Signed In | Redirecting ...
+              </span>
+            ) : (
+              <span>Sign Up</span>
+            )}
           </Button>
         </Form>
         <br />
-        {/* {loggedIn === true ? (
-          <p>
-            Thank You! You've been successfully registered and being redirected. Let's check what the weather
-            looks like today{" "}
-          </p>
-        ) : null} */}
-        {/* append inside the Button div */}
-        {/* {loggedIn === true ? <>You're Signed In</> : <>Sign Up</>} */}
+        {/* adding another render to the loggedIn true state */}
+        {loggedIn === true ? (
+          <p>Thank You! You've been signed in successfully. Let's check what the weather looks like today.</p>
+        ) : null}
       </center>
     </div>
   );
