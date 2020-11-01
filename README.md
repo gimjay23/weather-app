@@ -7,9 +7,7 @@
 # Update 1: several changes made; yet to add routing and conversion
 
 ## To Do 
-- Weather page to have a useState feature that allows for conversion of celsius to fahrenheit when the C or the F is clicked. 
-- Page Routing with Home, About, and Login Pages
-- saved searches on log in
+- Use localStorage / persistent storage to save searches
 
 
 PreMEST Day 3 Assignment
