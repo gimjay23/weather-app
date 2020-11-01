@@ -1,5 +1,7 @@
 ## Assignment III
 
+# Update III: routing | conversion | sign in & out | redirecting on sign up button click | saved searches et al; persistent storage to be added shortly
+
 # Update II: Search Functionality added
 
 # Update 1: several changes made; yet to add routing and conversion
@@ -7,6 +9,7 @@
 ## To Do 
 - Weather page to have a useState feature that allows for conversion of celsius to fahrenheit when the C or the F is clicked. 
 - Page Routing with Home, About, and Login Pages
+- saved searches on log in
 
 
 PreMEST Day 3 Assignment

@@ -1,10 +1,13 @@
-import React from "react";
-import { Form, FormControl, Button } from "react-bootstrap";
-import { Container, Row, Col } from "react-bootstrap";
-
+import React, { useState } from "react";
+//import useLocalStorageState from "use-local-storage-state";
+//imported components
 import "../App.css";
+import { Form, FormControl, Button, NavLink } from "react-bootstrap"; //Container, Row, Col, to add if needed
+import NavBar from "./NavBar";
+//import SavedSearches from "./SavedSearches";
 
 function Weather(props) {
+  //console.log(props.weatherData);
   const {
     location,
     region,
@@ -19,62 +22,74 @@ function Weather(props) {
     wind_speed,
   } = props.weatherData;
 
-  const centerStyle = {
-    alignContent: "center",
-    margin: "0 150px 0 150px",
-  };
+  //Variable temp
+  const [temp, setTemp] = useState(temperature);
 
+  //function for variable temp
+  function CelsuisToFahrenheit() {
+    setTemp(Math.round(((temperature - 32) * 5) / 9));
+  }
+
+  //variable mySearch
   const mySearch = (
-    <center>
-      <br />
-      <h3>Welcome to THE WEATHER APP</h3>
-      <hr style={{ width: "40%" }} />
+    <>
       <div>
-        <Form style={centerStyle} onSubmit= {(e) => props.changeWeather(e)}>
-          <FormControl type="text" placeholder="Enter Your Location" onChange={(e) => props.changeRegion(e.target.value)}/>
+        <center>
           <br />
-          <Button className="" variant="outline-light" onClick= {(e) => props.changeWeather(e)}>
-            SUBMIT
-          </Button>
-        </Form>
+          <h3>Welcome to THE WEATHER APP</h3>
+          <br />
+          <br />
+          <br />
+          <Form onSubmit={(e) => props.changeWeather(e)}>
+            <FormControl
+              className="search-bar text-center"
+              type="text"
+              placeholder="Enter Your Location"
+              onChange={(e) => props.changeRegion(e.target.value)}
+            />
+            <br />
+            <Button className="" variant="outline-light" onClick={(e) => props.changeWeather(e)}>
+              SUBMIT
+            </Button>
+          </Form>
+        </center>
       </div>
       <br />
-    </center>
+    </>
   );
 
-  const widget = {
-    backgroundColor: "inherit",
-    borderRadius: "15px",
-    boxShadow: "4px 2px #fff",
-    marginTop: "5px",
-    marginBottom: "5px",
-    height: "200px",
-    textAlign: "center",
-    padding: "5px",
-    color: "#fff"
-  };
-
+  //variable myText
   const myText = (
-    <Container fluid>
-      <Row>
-        <Col md={4}>
-          <div style={widget}>
-            <h1 style={{ fontSize: "60px" }}>
-              <sup>
-                <img src={img} alt="weather icon" style={{ width: "10%", marginRight: "20px" }} />
-              </sup>
+    <div className="container-fluid" style={{ marginTop: "80px" }}>
+      <div className="row pt-3">
+        <div className="col-md-4 my-1 text-center">
+          <div className="px-3 py-2 mx-1 w-box">
+            <sup>
+              <img
+                src={img}
+                alt="weather icon"
+                style={{ width: "8%", marginRight: "20px", marginTop: "-40px" }}
+              />
+            </sup>
+            <h1 style={{ fontSize: "80px" }}>
               {temperature}
-              <sup>°</sup>C
+              <sup>°</sup>C |{" "}
+              <NavLink className="t-link" onClick={CelsuisToFahrenheit}>
+                <h1>F{temp}</h1>
+              </NavLink>{" "}
+              {/**to change on load instead of click*/}
             </h1>
+            <hr style={{ width: "40%", backgroundColor: "#c451ac" }} />
             <h4>{description}</h4>
-            <hr style={{ width: "40%", backgroundColor: "white" }} />
+
             <h6>
               <span>Updated at:</span> {time}
             </h6>
           </div>
-        </Col>
-        <Col md={4}>
-          <div style={widget}>
+        </div>
+
+        <div className="col-md-4 my-1 text-center">
+          <div className="px-3 py-2 mx-1 w-box-mid">
             <h2>
               <span>Location:</span> {location}
             </h2>
@@ -87,31 +102,97 @@ function Weather(props) {
               <span>Time Zone:</span> {timezone}
             </p>
           </div>
-        </Col>
-        <Col md={4}>
-          <div style={widget}>
+        </div>
+
+        <div className="col-md-4 my-1 text-center">
+          <div className="px-3 py-2 mx-1 w-box">
             <h4>
               <span>Pressure(mbar)</span>: {pressure}
             </h4>
+            <br />
             <br />
             <h4>
               <span>Humidity(%):</span> {humidity}
             </h4>
             <br />
+            <br />
             <h5>
               <span>Wind Speed(km/hr):</span> {wind_speed}
             </h5>
           </div>
-        </Col>
-      </Row>
-    </Container>
+        </div>
+      </div>
+    </div>
   );
 
   return (
-    <div>
+    <div className="weather-page">
+      <NavBar loggedIn />
       {mySearch}
       <br />
       {myText}
+      <br />
+      <div className="text-center pt-5">
+        <br />
+        <hr className="mt-5" style={{ width: "40%", backgroundColor: "#c451ac" }} />
+        {props.saved.map((saves) => {
+          return (
+            <>
+              <div className="container-fluid" fluid style={{ marginTop: "80px" }}>
+                <div className="row pt-3">
+                  <div className="col-md-4 my-1 text-center">
+                    <div className="px-3 py-2 mx-1 svd-box">
+                      <sup>
+                        <img
+                          src={saves.img}
+                          alt="weather icon"
+                          style={{ width: "8%", marginRight: "20px", marginTop: "-40px" }}
+                        />
+                      </sup>
+                      <h1 style={{ fontSize: "80px" }}>
+                        {saves.temperature}
+                        <sup>°</sup>C |{" "}
+                        <NavLink className="t-link" onClick={CelsuisToFahrenheit}>
+                          <h1>F{temp}</h1>
+                        </NavLink>{" "}
+                        {/**to change on load instead of click*/}
+                      </h1>
+                      <hr style={{ width: "40%", backgroundColor: "#c451ac" }} />
+                      <h4>{saves.description}</h4>
+
+                      <h6>{saves.time}</h6>
+                    </div>
+                  </div>
+
+                  <div className="col-md-4 my-1 text-center">
+                    <div className="px-3 py-2 mx-1 svd-box-mid">
+                      <h2>{saves.location}</h2>
+                      <br />
+                      <h4>
+                        {saves.region} | {saves.country}
+                      </h4>
+                      <br />
+                      <p>{saves.timezone}</p>
+                    </div>
+                  </div>
+
+                  <div className="col-md-4 my-1 text-center">
+                    <div className="px-3 py-2 mx-1 svd-box">
+                      <h4>{saves.pressure}</h4>
+                      <hr style={{ width: "40%", backgroundColor: "#c451ac" }} />
+                      <h4>{saves.humidity}</h4>
+                      <hr style={{ width: "40%", backgroundColor: "#c451ac" }} />
+                      <h5>{saves.wind_speed}</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br />
+              <hr className="mt-5" style={{ width: "40%", backgroundColor: "#c451ac" }} />
+            </>
+          );
+        })}
+      </div>
     </div>
   );
 }

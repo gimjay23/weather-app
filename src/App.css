@@ -1,54 +1,128 @@
-.main {
-  background: linear-gradient(#fff, #504f4f);
-  background: url(./sunny.png);
-  width: 100%;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  min-height: 100vh;
-  justify-content: center;
-  font-size: calc(10px + 1vmin);
-  color: white;
+body {
+  margin: 0 auto;
+  height: 100%;
+  font-family: candara;
 }
 
-.nav-bar {
+.app {
   background-color: inherit;
+  margin: 0px auto; /*0 top and bottom and auto for left and right*/
 }
-Nav {
-  max-height: 10vh;
+
+.t-link {
+  display: inline-flex !important;
+  color: white !important;
+}
+
+.t-link:hover {
+  color: white;
+  font-size: larger;
+}
+
+a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:active,
+:focus {
+  border-bottom-style: solid;
+}
+ 
+/*bootstrap nav-link styling*/
+/* .navbar-nav .nav-link {
+  padding-right: 0;
+  padding-left: 0;
 }
 
 .nav-link {
-  margin: 30px;
-}
-
-.nav-link a:active {
-  text-decoration: underline;
-  color: black;
+  display: block;
+  padding: 0.5rem 1rem;
 }
 
 a {
   text-decoration: none;
-  color: rgb(241, 232, 104);
+  background-color: transparent;
 }
 
-a:hover {
-  text-decoration: none;
-  color: rgb(255, 255, 255);
+*,
+::after,
+::before {
+  box-sizing: border-box;
 }
+
+a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:active,
+:focus {
+  border-bottom-style: solid;
+} */
 
 .weather-page {
-  background: url(./snowy.png);
+  background-image: url(./assets/w9.jpg);
   width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: white;
   min-height: 100vh;
   justify-content: center;
   font-size: calc(10px + 1vmin);
   color: white;
+  overflow: hidden;
 }
 
+.search-bar {
+  width: 60%;
+}
+
+.w-box {
+  background-color: inherit; /*#7a5ec5*/
+  border-radius: 15px;
+  box-shadow: 1px 6px 1px #c451ac;
+  /* background-image: linear-gradient(to right, #c451ac,  #7a5ec5); */
+  color: #fff;
+}
+
+.w-box-mid {
+  background-color: inherit; /*#7a5ec5*/
+  border-radius: 15px;
+  box-shadow: 1px 6px 1px #faffff;
+  /* background-image: linear-gradient(to top right, #292878, #c451ac,  #7a5ec5, #faffff,  #c451ac); */
+  color: #fff;
+}
+
+.svd-box {
+  background-color: white;
+  background-image: linear-gradient(to right, #ffffff,  #7a5ec5);
+  box-shadow: 5px 2px 7px #faffff;
+  color: rgb(0, 0, 0);
+}
+
+.svd-box-mid {
+  background-color: white;
+  background-image: linear-gradient(to right,#c451ac,  #faffff);
+  box-shadow: 5px 2px 7px #faffff;
+  color: rgb(0, 0, 0);
+}
+
+span {
+  color: #fff2f2;
+  font-size: large;
+}
+
+/*ABOUT PAGE*/
 .about-page {
-  background: url(./rainy-day.jpg);
+  background-image: url(./assets/w6.jpg);
   width: 100%;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   min-height: 100vh;
   justify-content: center;
   align-content: center;
@@ -65,18 +139,51 @@ a:hover {
   color: #495772;
 }
 
-.temp-button {
-  border: hidden;
-  background-color: inherit;
+/*HOME PAGE*/
+.home-page {
+  background-image: url(./assets/bright_n_sunny.jpg);
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  justify-content: center;
+  align-content: center;
+  font-size: calc(10px + 1vmin);
   color: white;
 }
 
-.temp-button:active {
-  background-color: inherit;
-  color: #4a5b75;
+.home-temp-button,
+.home-button {
+  background-color: #8c4075;
+  border: none;
 }
 
-span {
-  color: #55a4f8;
-  font-size: large;
+.home-temp-button {
+  font-size: 50px;
+}
+
+.home-button {
+  font-size: 20px;
+}
+
+.home-temp-button:hover,
+.home-button:hover {
+  background-color: inherit;
+  border: none;
+  cursor: default;
+}
+
+/*LOGIN PAGE*/
+.login-page {
+  background-image: url(./assets/w3.jpg);
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  justify-content: center;
+  align-content: center;
+  font-size: calc(10px + 1vmin);
+  color: white;
 }
