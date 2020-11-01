@@ -8,6 +8,7 @@
 
 ## To Do 
 - Use localStorage / persistent storage to save searches
+- Last seven days (less than 7 is fine) for searched city ???
 
 
 PreMEST Day 3 Assignment
