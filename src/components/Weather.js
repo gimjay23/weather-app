@@ -137,8 +137,9 @@ function Weather(props) {
         <hr className="mt-5" style={{ width: "40%", backgroundColor: "#c451ac" }} />
         {props.saved.map((saves) => {
           return (
-            <>
-              <div className="container-fluid" fluid style={{ marginTop: "80px" }}>
+            <span>
+              {/*Key prop should be appended into the span tag for uniqueness  */}
+              <div className="container-fluid" style={{ marginTop: "80px" }}>
                 <div className="row pt-3">
                   <div className="col-md-4 my-1 text-center">
                     <div className="px-3 py-2 mx-1 svd-box">
@@ -189,7 +190,7 @@ function Weather(props) {
               </div>
               <br />
               <hr className="mt-5" style={{ width: "40%", backgroundColor: "#c451ac" }} />
-            </>
+            </span>
           );
         })}
       </div>

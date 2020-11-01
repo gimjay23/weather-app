@@ -1,6 +1,6 @@
 ## Assignment III
 
-# Update III: routing | conversion | sign in & out | redirecting on sign up button click | saved searches et al; persistent storage to be added shortly
+# Update III: SetTimeout | routing | conversion | sign in & out | redirecting on sign up button click | saved searches et al; persistent storage to be added shortly
 
 # Update II: Search Functionality added
 

@@ -11,18 +11,14 @@ import DataHouse from "./components/DataHouse";
 function App() {
   return (
     <div className="app">
-      <main>
-        <Router>
-          <Switch>
-            <Route>
-              <Route exact path="/" component={Home} />
-              <Route path="/signup" component={Login} />
-              <Route path="/about" component={About} />
-              <Route path="/datahouse" component={DataHouse} />
-            </Route>
-          </Switch>
-        </Router>
-      </main>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/signup" component={Login} />
+          <Route path="/about" component={About} />
+          <Route path="/datahouse" component={DataHouse} />
+        </Switch>
+      </Router>
     </div>
   );
 }

@@ -32,9 +32,16 @@ function Login() {
     event.preventDefault();
     //using history and path to let the onCLick on Button redirect to a specified page
     let path = `datahouse`;
+
     //now the condition
     if (email === "kojoasumani@hotmail.com" && password === "12345_6!" && checkOut === true) {
-      setLoggedIn(true && history.push(path));
+      setLoggedIn(true);
+
+      // add timeout effect
+      window.setTimeout(() => {
+        history.push(path);
+        // history is available by design in this.props when using react-router and class components
+      }, 3000); // 3000 means 3 seconds
     }
   }
 
@@ -65,17 +72,19 @@ function Login() {
             </Form.Group>
           </Form.Group>
 
-          <Button variant="primary" type="submit" onClick={handleLogin}>
-            Sign Up
+          <Button className="buttonload" variant="primary" type="submit" onClick={handleLogin}>
+            {loggedIn === true ? <span><i className="fa fa-spinner fa-spin"></i>Signed In | Redirecting ...</span> : <span>Sign Up</span>}
           </Button>
         </Form>
         <br />
-        {loggedIn === true ? (
+        {/* {loggedIn === true ? (
           <p>
             Thank You! You've been successfully registered and being redirected. Let's check what the weather
             looks like today{" "}
           </p>
-        ) : null}
+        ) : null} */}
+        {/* append inside the Button div */}
+        {/* {loggedIn === true ? <>You're Signed In</> : <>Sign Up</>} */}
       </center>
     </div>
   );

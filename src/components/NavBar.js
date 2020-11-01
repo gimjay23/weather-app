@@ -1,7 +1,6 @@
 import React from "react";
 
 //imported components
-// import { Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import cloudy from "../assets/cloudy.png";
 
